@@ -24,3 +24,15 @@
 .mainSvg {
 	width: 80%;
 }
+
+.download {
+	top: 20px;
+	right: 20px;
+	position: fixed;
+	width: 30px;
+	height: 30px;
+}
+
+.download:hover {
+	cursor: pointer;
+}
