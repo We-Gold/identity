@@ -4,4 +4,13 @@ import { render } from "solid-js/web"
 import "./index.css"
 import App from "./App"
 
-render(() => <App />, document.getElementById("root") as HTMLElement)
+import { TimestampProvider } from "./lib/timestamp"
+
+render(
+	() => (
+		<TimestampProvider>
+			<App />
+		</TimestampProvider>
+	),
+	document.getElementById("root") as HTMLElement
+)
