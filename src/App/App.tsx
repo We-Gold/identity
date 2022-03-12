@@ -2,11 +2,11 @@ import { createEffect, createSignal } from "solid-js"
 
 import styles from "./App.module.css"
 
-import Circle from "../Circle"
-import Line from "../Line"
-import Arc from "../Arc"
+import Circle from "../Shapes/Circle"
+import Line from "../Shapes/Line"
+import Arc from "../Shapes/Arc"
 
-import { radians } from "./angles"
+import { radians } from "../lib/angles"
 
 const REFRESH_RATE = 10 // milliseconds
 
