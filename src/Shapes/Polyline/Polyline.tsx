@@ -1,6 +1,12 @@
 import { Show } from "solid-js"
 
-const Polyline = (props: any) => {
+interface PolylineProps {
+	points: Array<number>
+	closed?: boolean
+	strokeWidth?: number
+}
+
+const Polyline = (props: PolylineProps) => {
 	const pointsString = () =>
 		props.points
 			.map(
@@ -16,7 +22,7 @@ const Polyline = (props: any) => {
 				<polyline
 					points={pointsString()}
 					stroke="black"
-					stroke-width="3"
+					stroke-width={props.strokeWidth ?? 3}
 					fill="transparent"
 				/>
 			}
@@ -24,7 +30,7 @@ const Polyline = (props: any) => {
 			<polygon
 				points={pointsString()}
 				stroke="black"
-				stroke-width="3"
+				stroke-width={props.strokeWidth ?? 3}
 				fill="transparent"
 			/>
 		</Show>

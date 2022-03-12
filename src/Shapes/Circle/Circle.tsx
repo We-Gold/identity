@@ -1,4 +1,11 @@
-const Circle = (props: any) => {
+interface CircleProps {
+	x: number
+	y: number
+	radius: number
+	strokeWidth?: number
+}
+
+const Circle = (props: CircleProps) => {
 	return (
 		<circle
 			cx={props.x}
@@ -6,7 +13,7 @@ const Circle = (props: any) => {
 			r={props.radius}
 			fill="transparent"
 			stroke="black"
-			stroke-width="3"
+			stroke-width={props.strokeWidth ?? 3}
 		/>
 	)
 }

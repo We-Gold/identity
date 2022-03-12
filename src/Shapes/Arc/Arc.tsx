@@ -1,4 +1,13 @@
-const Arc = (props: any) => {
+interface ArcProps {
+	x: number
+	y: number
+	radius: number
+	startAngle: number
+	endAngle: number
+	strokeWidth?: number
+}
+
+const Arc = (props: ArcProps) => {
 	return (
 		<path
 			d={describeArc(
@@ -10,7 +19,7 @@ const Arc = (props: any) => {
 			)}
 			fill="transparent"
 			stroke="black"
-			stroke-width="3"
+			stroke-width={props.strokeWidth ?? 3}
 		/>
 	)
 }

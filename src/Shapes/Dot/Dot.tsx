@@ -1,4 +1,11 @@
-const Dot = (props: any) => {
+interface DotProps {
+	x: number
+	y: number
+	radius: number
+	strokeWidth?: number
+}
+
+const Dot = (props: DotProps) => {
 	return (
 		<circle
 			cx={props.x}
@@ -6,7 +13,7 @@ const Dot = (props: any) => {
 			r={props.radius}
 			fill="black"
 			stroke="transparent"
-			stroke-width="3"
+			stroke-width={props.strokeWidth ?? 3}
 		/>
 	)
 }

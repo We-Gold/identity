@@ -18,9 +18,7 @@ export const calculatePercentOfRange = (
 	}
 
 	return fullLoop
-		? percent <= 0.5
-			? percent * 2
-			: (1 - percent) * 2
+		? (percent <= 0.5 ? percent * 2 : (1 - percent) * 2) * factor
 		: percent * factor
 }
 

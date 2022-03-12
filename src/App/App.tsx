@@ -1,6 +1,7 @@
 import styles from "./App.module.css"
 
 import Earth from "../Sections/Earth"
+import Topography from "../Sections/Topography"
 
 const App = () => {
 	return (
@@ -8,6 +9,7 @@ const App = () => {
 			<div class={styles.renderBox}>
 				<svg class={styles.mainSvg} viewBox="0 0 100 100">
 					<Earth />
+					<Topography />
 				</svg>
 			</div>
 		</div>
