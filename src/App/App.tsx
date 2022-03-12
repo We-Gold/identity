@@ -4,6 +4,9 @@ import styles from "./App.module.css"
 
 import Earth from "../Sections/Earth"
 import Topography from "../Sections/Topography"
+import Waves from "../Sections/Waves"
+import CentralDot from "../Sections/CentralDot"
+
 import Share from "../Share"
 import QR from "../QR"
 
@@ -25,6 +28,8 @@ const App = () => {
 						<svg class={styles.mainSvg} viewBox="0 0 100 100">
 							<Earth />
 							<Topography />
+							<Waves />
+							<CentralDot />
 						</svg>
 					}
 				>
