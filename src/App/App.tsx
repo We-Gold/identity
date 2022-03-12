@@ -1,18 +1,35 @@
+import { Show, createSignal } from "solid-js"
+
 import styles from "./App.module.css"
 
 import Earth from "../Sections/Earth"
 import Topography from "../Sections/Topography"
-import Download from "../Download"
+import Share from "../Share"
+import QR from "../QR"
 
 const App = () => {
+	const [sharing, setSharing] = createSignal(true)
+
 	return (
 		<div class={styles.mainArea}>
-			<Download class={styles.download} svgClass={styles.mainSvg} />
+			<Share
+				class={styles.download}
+				svgClass={styles.mainSvg}
+				setSharing={setSharing}
+				sharing={sharing}
+			/>
 			<div class={styles.renderBox}>
-				<svg class={styles.mainSvg} viewBox="0 0 100 100">
-					<Earth />
-					<Topography />
-				</svg>
+				<Show
+					when={sharing()}
+					fallback={
+						<svg class={styles.mainSvg} viewBox="0 0 100 100">
+							<Earth />
+							<Topography />
+						</svg>
+					}
+				>
+					<QR />
+				</Show>
 			</div>
 		</div>
 	)
