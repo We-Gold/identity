@@ -8,7 +8,7 @@ import Share from "../Share"
 import QR from "../QR"
 
 const App = () => {
-	const [sharing, setSharing] = createSignal(true)
+	const [sharing, setSharing] = createSignal(false)
 
 	return (
 		<div class={styles.mainArea}>
