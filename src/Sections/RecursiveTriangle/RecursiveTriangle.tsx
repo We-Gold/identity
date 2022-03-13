@@ -13,10 +13,10 @@ import {
 
 import Line from "../../Shapes/Line"
 
-const SIDE_LENGTH = 34
+const SIDE_LENGTH = 24
 const CORNER_X = 98
 const CORNER_Y = 98
-const LINE_WIDTH = 1
+const LINE_WIDTH = 0.75
 
 const MIN_LAYERS = 2
 const MAX_LAYERS = 5
@@ -35,7 +35,7 @@ const RecursiveTriangle = () => {
 
 	const calculateLayers = () => {
 		// Use a reduced timestamp for slower length variation
-		const timeOffset = timestamp() / 100000
+		const timeOffset = timestamp() / (100000 / 3)
 
 		const numberOfLayers =
 			Math.abs(getNoise(1, 1, timeOffset)) * (MAX_LAYERS - MIN_LAYERS) +
