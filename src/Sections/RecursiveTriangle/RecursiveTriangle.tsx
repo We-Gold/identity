@@ -13,13 +13,14 @@ import {
 
 import Line from "../../Shapes/Line"
 
-const SIDE_LENGTH = 24
+const SIDE_LENGTH = 20
 const CORNER_X = 98
 const CORNER_Y = 98
-const LINE_WIDTH = 0.75
+const LINE_WIDTH = 1
+const MAX_ALPHA = 0.4
 
 const MIN_LAYERS = 2
-const MAX_LAYERS = 5
+const MAX_LAYERS = 4
 
 // Creates an interesting recursive effect
 const AVERAGE_DIVISOR = 2.1
@@ -32,6 +33,8 @@ const RecursiveTriangle = () => {
 			fullLoop: true,
 			factor: LINE_WIDTH,
 		})
+
+	const alpha = () => (strokeWidth() / LINE_WIDTH) * MAX_ALPHA
 
 	const calculateLayers = () => {
 		// Use a reduced timestamp for slower length variation
@@ -118,7 +121,8 @@ const RecursiveTriangle = () => {
 					<>
 						<Line
 							rounded={true}
-							strokeWidth={strokeWidth()}
+							strokeWidth={LINE_WIDTH}
+							alpha={alpha()}
 							x1={triangle.corner1.x}
 							y1={triangle.corner1.y}
 							x2={triangle.corner2.x}
@@ -126,7 +130,8 @@ const RecursiveTriangle = () => {
 						/>
 						<Line
 							rounded={true}
-							strokeWidth={strokeWidth()}
+							strokeWidth={LINE_WIDTH}
+							alpha={alpha()}
 							x1={triangle.corner2.x}
 							y1={triangle.corner2.y}
 							x2={triangle.corner3.x}
