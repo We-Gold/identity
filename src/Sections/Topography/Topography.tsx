@@ -5,9 +5,7 @@ import Line from "../../Shapes/Line"
 import { useTimestamp } from "../../lib/timestamp"
 import { calculatePercentOfRange } from "../../lib/timerange"
 import { radians } from "../../lib/angles"
-
-import { makeNoise3D } from "fast-simplex-noise"
-import Rand from "rand-seed"
+import { getNoise } from "../../lib/random"
 
 const EARTH_X = 50
 const EARTH_Y = 50
@@ -21,11 +19,6 @@ const MAX_LENGTH = 18
 const MIN_LENGTH = 3
 
 const Topography = () => {
-	// Make a 3D simplex noise generator to sync noise by timestamp between devices
-	const randomNumberGenerator = new Rand("identity")
-	const getRandom = () => randomNumberGenerator.next()
-	const noiseGenerator = makeNoise3D(getRandom)
-
 	const timestamp = useTimestamp()
 
 	const moonLineAngle = () =>
@@ -51,7 +44,7 @@ const Topography = () => {
 		// Calculate the length for the current line based on a 3D noise map,
 		// using the current timestamp to synchronize the lengths between devices
 		const length = Math.abs(
-			noiseGenerator(x1 * 0.1, y1 * 0.1, timeOffset) *
+			getNoise(x1 * 0.1, y1 * 0.1, timeOffset) *
 				(MAX_LENGTH - MIN_LENGTH) +
 				MIN_LENGTH
 		)

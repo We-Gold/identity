@@ -6,6 +6,7 @@ import Earth from "../Sections/Earth"
 import Topography from "../Sections/Topography"
 import Waves from "../Sections/Waves"
 import CentralDot from "../Sections/CentralDot"
+import RecursiveTriangle from "../Sections/RecursiveTriangle"
 
 import Share from "../Share"
 import QR from "../QR"
@@ -30,6 +31,7 @@ const App = () => {
 							<Topography />
 							<Waves />
 							<CentralDot />
+							<RecursiveTriangle />
 						</svg>
 					}
 				>
