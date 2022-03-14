@@ -1,0 +1,30 @@
+.refreshIcon {
+	width: 30px;
+	height: 30px;
+	fill: black;
+	position: fixed;
+	top: 35px;
+	left: 50%;
+	animation: slidein 2s ease 1;
+}
+
+.refreshIcon:hover {
+	cursor: pointer;
+}
+
+@keyframes slidein {
+	0% {
+		top: 10px;
+		opacity: 0;
+	}
+
+	75% {
+		top: 35px;
+		opacity: 1;
+		transform: rotate(0deg);
+	}
+
+	100% {
+		transform: rotate(360deg);
+	}
+}
