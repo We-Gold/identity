@@ -12,6 +12,7 @@ import RecursiveTriangle from "../Sections/RecursiveTriangle"
 import Share from "../Share"
 import QR from "../QR"
 import Refresh from "../Refresh"
+import Strings from "../Sections/Strings"
 
 const App = () => {
 	const [needsRefresh, setNeedsRefresh] = createSignal(false)
@@ -49,6 +50,7 @@ const App = () => {
 								<Waves />
 								<CentralDot />
 								<RecursiveTriangle />
+								<Strings />
 							</svg>
 						}
 					>

@@ -1,0 +1,47 @@
+.path4 {
+	stroke-dasharray: 10;
+	stroke-dashoffset: 0;
+	animation: draw4 5s linear infinite;
+}
+
+@keyframes draw4 {
+	to {
+		stroke-dashoffset: 20;
+	}
+}
+
+.path5 {
+	stroke-dasharray: 30;
+	stroke-dashoffset: 0;
+	animation: draw5 5s linear infinite;
+}
+
+@keyframes draw5 {
+	to {
+		stroke-dashoffset: 60;
+	}
+}
+
+.path6 {
+	stroke-dasharray: 10;
+	stroke-dashoffset: 0;
+	animation: draw6 8s linear infinite;
+}
+
+@keyframes draw6 {
+	to {
+		stroke-dashoffset: 20;
+	}
+}
+
+.path7 {
+	stroke-dasharray: 20;
+	stroke-dashoffset: 0;
+	animation: draw7 12s linear infinite;
+}
+
+@keyframes draw7 {
+	to {
+		stroke-dashoffset: 40;
+	}
+}

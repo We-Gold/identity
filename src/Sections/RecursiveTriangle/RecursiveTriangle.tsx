@@ -9,7 +9,7 @@ import {
 	Triangle,
 	copyTriangle,
 	lerp,
-} from "./triangles"
+} from "../../lib/triangles"
 
 import Line from "../../Shapes/Line"
 
