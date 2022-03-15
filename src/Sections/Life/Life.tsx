@@ -25,7 +25,7 @@ const MAX_LAYERS = 4
 // Creates an interesting recursive effect
 const AVERAGE_DIVISOR = 2.1
 
-const RecursiveTriangle = () => {
+const Life = () => {
 	const timestamp = useTimestamp()
 
 	const strokeWidth = () =>
@@ -144,4 +144,4 @@ const RecursiveTriangle = () => {
 	)
 }
 
-export default RecursiveTriangle
+export default Life

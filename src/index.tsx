@@ -5,12 +5,18 @@ import "./index.css"
 import App from "./App"
 
 import { TimestampProvider } from "./lib/timestamp"
+import { PagesProvider } from "./lib/pages"
+import { StoreProvider } from "./lib/storecontext"
 
 render(
 	() => (
-		<TimestampProvider>
-			<App />
-		</TimestampProvider>
+		<PagesProvider>
+			<TimestampProvider>
+				<StoreProvider>
+					<App />
+				</StoreProvider>
+			</TimestampProvider>
+		</PagesProvider>
 	),
 	document.getElementById("root") as HTMLElement
 )

@@ -3,7 +3,7 @@ import { calculatePercentOfRange } from "../../lib/timerange"
 
 const WAVE_WIDTH = 1.5
 
-const Waves = () => {
+const Water = () => {
 	const timestamp = useTimestamp()
 
 	const strokeWidth = () =>
@@ -45,4 +45,4 @@ const Waves = () => {
 	)
 }
 
-export default Waves
+export default Water

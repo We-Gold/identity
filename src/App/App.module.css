@@ -21,11 +21,7 @@
 	align-items: center;
 }
 
-.mainSvg {
-	width: 80%;
-}
-
-.download {
+.share {
 	top: 20px;
 	right: 20px;
 	position: fixed;
@@ -33,6 +29,18 @@
 	height: 30px;
 }
 
-.download:hover {
+.share:hover {
+	cursor: pointer;
+}
+
+.add {
+	top: 20px;
+	left: 20px;
+	position: fixed;
+	width: 30px;
+	height: 30px;
+}
+
+.add:hover {
 	cursor: pointer;
 }

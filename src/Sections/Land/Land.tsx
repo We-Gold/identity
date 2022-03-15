@@ -1,10 +1,10 @@
 import { useTimestamp } from "../../lib/timestamp"
 import { calculatePercentOfRange } from "../../lib/timerange"
 
-import styles from "./Strings.module.css"
+import styles from "./Land.module.css"
 import { Show } from "solid-js"
 
-const Strings = () => {
+const Land = () => {
 	const timestamp = useTimestamp()
 
 	const displayPercent = () =>
@@ -51,4 +51,4 @@ const Strings = () => {
 	)
 }
 
-export default Strings
+export default Land

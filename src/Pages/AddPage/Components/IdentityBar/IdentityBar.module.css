@@ -1,0 +1,39 @@
+.barBody {
+	--height: clamp(4rem, 12vw, 7rem);
+	height: var(--height);
+	min-height: var(--height);
+	background-color: white;
+	border-radius: 1rem;
+	box-shadow: 1px 1px 9px rgb(0 0 0 / 20%);
+	display: flex;
+	flex-direction: row;
+	justify-content: space-between;
+	align-items: center;
+	padding-left: 1rem;
+	padding-right: 1rem;
+}
+
+.centerChild {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+}
+
+.barSvg > svg {
+	height: calc(var(--height) * 3 / 4);
+}
+
+.barBody > p {
+	display: block;
+	font-size: calc(var(--height) * 9 / 20);
+	font-weight: 100;
+}
+
+.positionSvg > svg {
+	height: calc(var(--height) * 4 / 5);
+}
+
+.toggleButton {
+	cursor: pointer;
+}

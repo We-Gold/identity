@@ -1,18 +1,12 @@
-import { Show, createSignal } from "solid-js"
+import { createSignal } from "solid-js"
 import { registerSW } from "virtual:pwa-register"
 
 import styles from "./App.module.css"
 
-import Earth from "../Sections/Earth"
-import Topography from "../Sections/Topography"
-import Waves from "../Sections/Waves"
-import CentralDot from "../Sections/CentralDot"
-import RecursiveTriangle from "../Sections/RecursiveTriangle"
-
-import Share from "../Share"
-import QR from "../QR"
-import Refresh from "../Refresh"
-import Strings from "../Sections/Strings"
+import Share from "../Buttons/Share"
+import Refresh from "../Buttons/Refresh"
+import Add from "../Buttons/Add"
+import Page from "../Page"
 
 const App = () => {
 	const [needsRefresh, setNeedsRefresh] = createSignal(false)
@@ -24,8 +18,6 @@ const App = () => {
 		onOfflineReady() {},
 	})
 
-	const [sharing, setSharing] = createSignal(false)
-
 	return (
 		<>
 			<Refresh
@@ -34,28 +26,10 @@ const App = () => {
 				updateSW={updateSW}
 			/>
 			<div class={styles.mainArea}>
-				<Share
-					class={styles.download}
-					svgClass={styles.mainSvg}
-					setSharing={setSharing}
-					sharing={sharing}
-				/>
+				<Share class={styles.share} svgClass={styles.mainSvg} />
+				<Add class={styles.add} />
 				<div class={styles.renderBox}>
-					<Show
-						when={sharing()}
-						fallback={
-							<svg class={styles.mainSvg} viewBox="0 0 100 100">
-								<Earth />
-								<Topography />
-								<Waves />
-								<CentralDot />
-								<RecursiveTriangle />
-								<Strings />
-							</svg>
-						}
-					>
-						<QR />
-					</Show>
+					<Page />
 				</div>
 			</div>
 		</>

@@ -1,24 +1,28 @@
 import { Show } from "solid-js"
+import { usePages } from "../../lib/pages"
 
 const FILL_COLOR = "rgba(0,0,0,1)"
 
-const Share = (props: any) => {
+const Add = (props: any) => {
+	const { page, setPage, pages } = usePages()
+
 	return (
 		<Show
-			when={props.sharing()}
+			when={page() == pages.add}
 			fallback={
-				<a class={props.class} onClick={() => props.setSharing(true)}>
+				<a class={props.class} onClick={() => setPage(pages.add)}>
 					<svg
 						xmlns="http://www.w3.org/2000/svg"
 						viewBox="0 0 24 24"
 						fill={FILL_COLOR}
 					>
-						<path d="M16 5l-1.42 1.42-1.59-1.59V16h-1.98V4.83L9.42 6.42 8 5l4-4 4 4zm4 5v11c0 1.1-.9 2-2 2H6c-1.11 0-2-.9-2-2V10c0-1.11.89-2 2-2h3v2H6v11h12V10h-3V8h3c1.1 0 2 .89 2 2z" />
+						<path d="M0 0h24v24H0z" fill="none" />
+						<path d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z" />
 					</svg>
 				</a>
 			}
 		>
-			<a class={props.class} onClick={() => props.setSharing(false)}>
+			<a class={props.class} onClick={() => setPage(pages.home)}>
 				<svg
 					xmlns="http://www.w3.org/2000/svg"
 					viewBox="0 0 24 24"
@@ -31,4 +35,4 @@ const Share = (props: any) => {
 	)
 }
 
-export default Share
+export default Add
