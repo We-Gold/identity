@@ -40,6 +40,8 @@ const PositionButton = (props: PositionButtonProps) => {
 				viewBox="0 0 16 16"
 				fill="none"
 				xmlns="http://www.w3.org/2000/svg"
+				onClick={() => updatePresent()}
+				class={styles.toggleButton}
 			>
 				<rect width="16" height="16" rx="1" fill="#C4C4C4" />
 				<svg
@@ -51,11 +53,7 @@ const PositionButton = (props: PositionButtonProps) => {
 					fill="none"
 					xmlns="http://www.w3.org/2000/svg"
 				>
-					<g
-						filter="url(#filter0_d_5_174)"
-						class={styles.toggleButton}
-						onClick={() => updatePresent()}
-					>
+					<g filter="url(#filter0_d_5_174)">
 						<rect
 							x="1"
 							y="1"
